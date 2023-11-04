@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:swooshed_app/utils/app_colors/app_colors.dart';
 import 'package:swooshed_app/utils/app_images/app_images.dart';
-import 'package:swooshed_app/view/choose_language/choose_language.dart';
+import 'package:swooshed_app/view/profile/components/language_screen_select.dart';
 import 'package:swooshed_app/view/profile/components/row_widget.dart';
 import 'components/profile_header_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -77,7 +77,7 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     RowWidget(
                       ontap: () {
-                        Get.to(() => const ChooseLanguageScreen());
+                        Get.to(() => const ChooseLanguagePofile());
                       },
                       preffix: AppImages.profileLanguages,
                       text: AppLocalizations.of(context)!.language,
