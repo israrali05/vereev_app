@@ -1,6 +1,5 @@
 import 'dart:io';
 
-
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -74,10 +73,12 @@ class _CategoryTwoState extends State<CategoryTwo> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomText(
                       text:
-                          'This is the examples of the images you need to submit',
+                          'This is the examples of the images \nyou need to submit',
+                      textAlign: TextAlign.start,
                       style: AppTextStyles.fontSize14to400,
                     ),
                     SizedBox(height: 24.h),
@@ -88,15 +89,17 @@ class _CategoryTwoState extends State<CategoryTwo> {
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 3,
                           mainAxisSpacing: 8,
-                          crossAxisSpacing: 8),
+                          crossAxisSpacing: 8,
+                          mainAxisExtent: 100.h),
                       itemBuilder: (context, index) {
                         return Column(
                           children: [
                             Expanded(
                               child: CustomContainer(
-                                height: 98,
-                                width: 98,
-                                gradient: AppColors.mediumGradient,
+                                height: 98.h,
+                                width: 98.w,
+                                color: AppColors.textColorWhite,
+                                // gradient: AppColors.mediumGradient,
                                 borderRadius: BorderRadius.circular(10.r),
                                 child: InkWell(
                                   onTap: () {
@@ -107,6 +110,7 @@ class _CategoryTwoState extends State<CategoryTwo> {
                                           child: CustomImage(
                                             height: 28.h,
                                             width: 34.w,
+                                            color: AppColors.bgColor,
                                             imgUrl: _detailList[index].imgUrl,
                                           ),
                                         )
@@ -115,6 +119,7 @@ class _CategoryTwoState extends State<CategoryTwo> {
                                             selectedFiles[index]!.path!,
                                           ),
                                           fit: BoxFit.cover,
+                                          color: AppColors.bgColor,
                                         ),
                                 ),
                               ),
@@ -133,12 +138,6 @@ class _CategoryTwoState extends State<CategoryTwo> {
                     ),
                   ],
                 ),
-              ),
-              CustomButton(
-                text: 'Go To Redeem',
-                onPressed: () {
-                  Get.to(RedeemPromoCode());
-                },
               ),
             ],
           ),

@@ -1,4 +1,3 @@
-
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -7,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:swooshed_app/utils/app_images/app_images.dart';
 import 'package:swooshed_app/utils/app_styles/app_text_styles.dart';
+import 'package:swooshed_app/view/category_two/category_two.dart';
 import 'package:swooshed_app/view/payment_method/payment_method.dart';
 import 'package:swooshed_app/widgets/custom_app_bar/custom_app_bar.dart';
 import 'package:swooshed_app/widgets/custom_button/custom_buttons.dart';
@@ -44,7 +44,6 @@ class _DetailsState extends State<Details> {
 
   @override
   Widget build(BuildContext context) {
-
     final detailsList = detailList(context);
     return SafeArea(
       child: Scaffold(
@@ -99,16 +98,17 @@ class _DetailsState extends State<Details> {
                             style: AppTextStyles.fontSize14to400
                                 .copyWith(fontWeight: FontWeight.w700),
                           ),
-                          IconButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            icon: Icon(
-                              Icons.question_mark_sharp,
-                              size: 14,
-                              color: AppColors.textColor,
-                            ),
-                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: GestureDetector(
+                                onTap: () {
+                                  Get.to(() => CategoryTwo());
+                                },
+                                child: Image.asset(
+                                  AppImages.itemsDetailsQuestionMark,
+                                  height: 18,
+                                )),
+                          )
                         ],
                       ),
                       GridView.builder(

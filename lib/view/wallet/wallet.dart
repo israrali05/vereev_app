@@ -58,7 +58,7 @@ class WalletScreen extends StatelessWidget {
                               width: 5.w,
                             ),
                             Text(
-                              "Token",
+                              AppLocalizations.of(context)!.tokens,
                               style: TextStyle(
                                 fontSize: 12,
                                 fontFamily: Appfonts.sfPro,

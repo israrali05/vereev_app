@@ -174,5 +174,7 @@
   "promoSuccess":"Redeem Code Success!",
   "congrats":"Congratulations! You have success redeem\n“PROMO” code. Now you have",
   "tokens20":"20 Tokens",
-  "startChecking":"Start Checking"
+  "startChecking":"Start Checking",
+  "this_is_the_examples":"This is the examples of the images you need to submit",
+  "go_To_Redeem":"Go To Redeem"
 }
