@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:swooshed_app/controller/translation_controller/translation_controller.dart';
 import 'package:swooshed_app/utils/app_colors/app_colors.dart';
-import 'package:swooshed_app/view/choose_language/choose_language.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'view/SplashScreen/splashscreen.dart';
 import 'view/bottom_nav_bar/nav_bar.dart';
 import 'view/not_login/not_login.dart';
 import 'view/on_boarding/on_boarding.dart';
@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
               // home: const ChooseLanguageScreen(),
               initialRoute: '/', // Initial route
               getPages: [
-                GetPage(name: '/', page: () => ChooseLanguageScreen()),
+                GetPage(name: '/', page: () => SplashScreen()),
                 GetPage(name: '/OnBoarding', page: () => OnBoardingScreen()),
                 GetPage(name: '/NotLoginScreen', page: () => NotLoginScreen()),
                 GetPage(name: '/LoginScreen', page: () => LoginScreen()),

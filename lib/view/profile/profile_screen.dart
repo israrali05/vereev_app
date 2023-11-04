@@ -40,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
                 RowWidget(
                   ontap: () {},
                   preffix: AppImages.profileShareApp,
-                  text: AppLocalizations.of(context)!.share_swooshed_app,
+                  text: AppLocalizations.of(context)!.share_vereev_app,
                 ),
                 SizedBox(
                   height: 24.h,

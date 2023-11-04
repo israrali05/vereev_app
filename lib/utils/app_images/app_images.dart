@@ -1,5 +1,12 @@
 class AppImages {
   // static const languageImg1 = "assets/images/svg_images";
+
+  //  App Logo
+  static const appSplashlogo = "assets/images/app_logo/splash_logo.png";
+  static const appIcon = "assets/images/app_logo/icon_app.jpg";
+  static const appIconPng = "assets/images/app_logo/app_icon_png.png";
+  static const logoapp_pngfull = "assets/images/app_logo/logo_app.png";
+
   //Not Login Screen Images
   static const person = "assets/images/svg_images/person.svg";
 

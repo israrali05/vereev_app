@@ -43,7 +43,7 @@ class PaymentMethod extends StatelessWidget {
                       ),
                       SizedBox(height: 20.h),
                       CustomText(
-                        text: AppLocalizations.of(context)!.swooshedToken,
+                        text: AppLocalizations.of(context)!.vereevToken,
                         style: AppTextStyles.fontSize14to400.copyWith(
                             fontWeight: FontWeight.w700, letterSpacing: 0.35),
                       ),

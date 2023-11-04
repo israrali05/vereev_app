@@ -34,14 +34,13 @@ class Wallet extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomText(
-                text: AppLocalizations.of(context)!.swooshedToken,
-                style: AppTextStyles.fontSize14to400
-                    .copyWith(fontWeight: FontWeight.w500,color: AppColors.bgColor),
+                text: AppLocalizations.of(context)!.vereevToken,
+                style: AppTextStyles.fontSize14to400.copyWith(
+                    fontWeight: FontWeight.w500, color: AppColors.bgColor),
               ),
               CustomText(
-                text: AppLocalizations.of(context)!.you_Have_18,
-                style: AppTextStyles.fontSize10to500
-              ),
+                  text: AppLocalizations.of(context)!.you_Have_18,
+                  style: AppTextStyles.fontSize10to500),
             ],
           )
         ],

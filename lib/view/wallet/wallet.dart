@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:swooshed_app/utils/app_colors/app_colors.dart';
+import 'package:swooshed_app/utils/app_fonts/app_fonts.dart';
 import 'package:swooshed_app/utils/app_images/app_images.dart';
 import 'package:swooshed_app/utils/app_styles/app_text_styles.dart';
 import 'package:swooshed_app/widgets/custom_sized_box/custom_sized_box.dart';
@@ -46,16 +47,29 @@ class WalletScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ///Logo Image Swooshed
-                        SvgPicture.asset(
-                          AppImages.walletLogo,
-                          width: 96.w,
-                          height: 16.h,
-                          color: AppColors.bgColor,
+                        Row(
+                          children: [
+                            Image.asset(
+                              AppImages.logoapp_pngfull,
+                              height: 15,
+                              color: AppColors.bgColor,
+                            ),
+                            CustomSizedBox(
+                              width: 5.w,
+                            ),
+                            Text(
+                              "Token",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontFamily: Appfonts.sfPro,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            )
+                          ],
                         ),
                         CustomSizedBox(
-                          height: 4.h,
+                          height: 5.h,
                         ),
-
 
                         /// Token Text
                         RichText(
@@ -79,6 +93,7 @@ class WalletScreen extends StatelessWidget {
                 CustomSizedBox(
                   height: 12.h,
                 ),
+
                 ///Redeem Promo Code Component
                 GestureDetector(
                   onTap: () {
@@ -87,7 +102,6 @@ class WalletScreen extends StatelessWidget {
                   child: PaymentMethodContainer(
                     image: AppImages.promoCodePngImage,
                     text: AppLocalizations.of(context)!.redeem_promo_code,
-
                   ),
                 ),
                 CustomSizedBox(
@@ -108,16 +122,17 @@ class WalletScreen extends StatelessWidget {
                 CustomSizedBox(
                   height: 32.h,
                 ),
+
                 ///Buy Token Text
                 CustomText(
-
                   text: AppLocalizations.of(context)!.buy_token,
-                  style: AppTextStyles.fontSize14to700.copyWith(color: AppColors.textColor),
-
+                  style: AppTextStyles.fontSize14to700
+                      .copyWith(color: AppColors.textColor),
                 ),
                 CustomSizedBox(
                   height: 16.h,
                 ),
+
                 ///Buy Token Component
                 const BuyTokenComponent()
               ],
