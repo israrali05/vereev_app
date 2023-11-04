@@ -12,7 +12,6 @@ import 'package:swooshed_app/model/choose_languages_model/choose_language.dart';
 
 import '../../../widgets/custom_text/custom_text.dart';
 
-
 class ChooseLanguagePofile extends StatefulWidget {
   const ChooseLanguagePofile({Key? key}) : super(key: key);
 
@@ -21,8 +20,6 @@ class ChooseLanguagePofile extends StatefulWidget {
 }
 
 class _ChooseLanguageScreenState extends State<ChooseLanguagePofile> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,61 +56,59 @@ class _ChooseLanguageScreenState extends State<ChooseLanguagePofile> {
                   itemCount: languageLists.length,
                   itemBuilder: (context, index) {
                     return Consumer<LanguageChangeController>(
-                     builder: (context, Provider, child){
-                        return GestureDetector(
-                          onTap: () {
-                            Provider.setCurrent(index);
-                        Provider.changelanguage(
-                        Locale(TranslationList[index].languageName));
-                          },
-                          child: Container(
-                            // width: 326,
-                            height: 48.h,
-                            // color: AppColors.textColor,
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 16.w, vertical: 14.h),
-                            margin: EdgeInsets.only(bottom: 8.r),
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                              color: Provider.current == index
-                                  ? AppColors.textColorGrey
-                                  : AppColors.textColor,
-                              borderRadius: BorderRadius.circular(4),
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: Color(0x3F000000),
-                                  blurRadius: 4,
-                                  offset: Offset(0, 4),
-                                  spreadRadius: 0,
-                                ),
-                              ],
-                            ),
-                            child: Row(
-                              children: [
-                                CountryFlag.fromCountryCode(
-                                  languageLists[index].flagName,
-                                  height: 22.h,
-                                  width: 18.w,
-                                ),
-                                CustomSizedBox(width: 10),
-                                CustomText(
-                                    text: languageLists[index].languageName,
-                                    style: AppTextStyles.fontSize14to400
-                                        .copyWith(fontWeight: FontWeight.w500,color: AppColors.bgColor)),
-                              ],
-                            ),
+                        builder: (context, Provider, child) {
+                      return GestureDetector(
+                        onTap: () {
+                          Provider.setCurrent(index);
+                          Provider.changelanguage(
+                              Locale(TranslationList[index].languageName));
+                        },
+                        child: Container(
+                          // width: 326,
+                          height: 48.h,
+                          // color: AppColors.textColor,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 16.w, vertical: 14.h),
+                          margin: EdgeInsets.only(bottom: 8.r),
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                            color: Provider.current == index
+                                ? AppColors.textColorGrey
+                                : AppColors.textColor,
+                            borderRadius: BorderRadius.circular(4),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Color(0x3F000000),
+                                blurRadius: 4,
+                                offset: Offset(0, 4),
+                                spreadRadius: 0,
+                              ),
+                            ],
                           ),
-                        );
-                      }
-                    );
-
+                          child: Row(
+                            children: [
+                              CountryFlag.fromCountryCode(
+                                languageLists[index].flagName,
+                                height: 22.h,
+                                width: 18.w,
+                              ),
+                              CustomSizedBox(width: 10),
+                              CustomText(
+                                  text: languageLists[index].languageName,
+                                  style: AppTextStyles.fontSize14to400.copyWith(
+                                      fontWeight: FontWeight.w500,
+                                      color: AppColors.bgColor)),
+                            ],
+                          ),
+                        ),
+                      );
+                    });
                   },
                 ),
               ),
               CustomSizedBox(
                 height: 32.h,
               ),
-          
             ],
           ),
         ),
