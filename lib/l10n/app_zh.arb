@@ -171,5 +171,7 @@
     "promoSuccess": "兑换代码成功！",
     "congrats": "恭喜！您已成功兑换“PROMO”代码。现在您有",
     "tokens20": "20代币",
-    "startChecking": "开始检查"
+    "startChecking": "开始检查",
+    "this_is_the_examples": "这是您需要提交的图像示例",
+"image_Guidance": "图像指南"
 }

@@ -172,6 +172,8 @@
   "onlyTrustFiles": "(Dôverujte len súborom, ktoré sú poskytované na platforme vereev. Všetky archívy budú uložené v našom dátovom centre. Ostatné dokumenty budú považované za neplatné)",
   "noticesFor": "Upozornenie pre držiteľov certifikátov: Buďte opatrní pri zdieľaní odkazu. Vaše údaje sú prepojené s certifikátnym súborom.",
   "photosOf": "Fotografie položky budú pripojené nižšie. Tento certifikát môže slúžiť ako dôkaz autenticity položky.",
-  "wevereev": "My, vereev, nezávislá platforma na autentifikáciu tretích strán, potvrdzujeme, že položka (xxx) je falošná na základe poskytnutých fotografií a v súlade s požiadavkami značky návrhára."
+  "wevereev": "My, vereev, nezávislá platforma na autentifikáciu tretích strán, potvrdzujeme, že položka (xxx) je falošná na základe poskytnutých fotografií a v súlade s požiadavkami značky návrhára.",
+  "this_is_the_examples": "Toto sú príklady obrázkov, ktoré musíte odoslať.",
+"image_Guidance": "Orientácia obrázka"
 }
 

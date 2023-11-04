@@ -172,5 +172,7 @@
   "promoSuccess": "Promocode met succes ingewisseld!",
   "congrats": "Gefeliciteerd! Je hebt de 'PROMO' code met succes ingewisseld. Nu heb je",
   "tokens20": "20 Tokens",
-  "startChecking": "Begin met controleren"
+  "startChecking": "Begin met controleren",
+  "this_is_the_examples": "Dit zijn voorbeelden van de afbeeldingen die je moet indienen.",
+"image_Guidance": "Afbeeldingsrichtlijnen"
 }

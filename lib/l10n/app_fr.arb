@@ -172,6 +172,8 @@
   "promoSuccess": "Code de promotion réussi !",
   "congrats": "Félicitations ! Vous avez réussi à échanger le code « PROMO ». Maintenant, vous avez",
   "tokens20": "20 jetons",
-  "startChecking": "Commencez la vérification"
+  "startChecking": "Commencez la vérification",
+  "this_is_the_examples": "Voici les exemples des images que vous devez soumettre.",
+"image_Guidance": "Guide d'image"
 }
 

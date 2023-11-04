@@ -172,5 +172,7 @@
     "promoSuccess": "Einlösecode erfolgreich!",
     "congrats": "Herzlichen Glückwunsch! Sie haben den 'PROMO'-Code erfolgreich eingelöst. Jetzt haben Sie",
     "tokens20": "20 Tokens",
-    "startChecking": "Beginnen Sie mit der Überprüfung"
+    "startChecking": "Beginnen Sie mit der Überprüfung",
+    "this_is_the_examples": "Dies sind die Beispiele der Bilder, die Sie einreichen müssen.",
+"image_Guidance": "Bildanleitung"
 }

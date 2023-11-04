@@ -172,5 +172,7 @@
   "promoSuccess": "Codice Promozionale Riscattato con Successo!",
   "congrats": "Congratulazioni! Hai riscattato con successo il codice “PROMO”. Ora hai",
   "tokens20": "20 Token",
-  "startChecking": "Inizia la Verifica"
+  "startChecking": "Inizia la Verifica",
+  "this_is_the_examples": "Questi sono gli esempi delle immagini che devi inviare.",
+"image_Guidance": "Guida all'immagine"
 }

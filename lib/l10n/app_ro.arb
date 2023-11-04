@@ -172,5 +172,7 @@
   "promoSuccess": "Codul promoțional a fost reușit schimbat!",
   "congrats": "Felicitări! Ați reușit să răscumpărați codul „PROMO”. Acum aveți",
   "tokens20": "20 Token-uri",
-  "startChecking": "Începeți verificarea"
+  "startChecking": "Începeți verificarea",
+  "this_is_the_examples": "Acestea sunt exemplele de imagini pe care trebuie să le trimiteți.",
+"image_Guidance": "Ghid de imagine"
 }

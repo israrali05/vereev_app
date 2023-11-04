@@ -172,5 +172,7 @@
     "promoSuccess": "¡Éxito al canjear el código!",
     "congrats": "¡Felicidades! Has canjeado con éxito el código\n“PROMO”. Ahora tienes",
     "tokens20": "20 Tokens",
-    "startChecking": "Comenzar a verificar"
+    "startChecking": "Comenzar a verificar",
+    "this_is_the_examples": "Estos son los ejemplos de las imágenes que debes enviar.",
+"image_Guidance": "Guía de imagen"
 }
