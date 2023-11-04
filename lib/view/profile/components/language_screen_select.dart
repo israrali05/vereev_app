@@ -1,6 +1,7 @@
 import 'package:country_flags/country_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:swooshed_app/Model/translation_model/translation_model.dart';
 import 'package:swooshed_app/controller/translation_controller/translation_controller.dart';
@@ -10,6 +11,7 @@ import 'package:swooshed_app/utils/app_styles/app_text_styles.dart';
 import 'package:swooshed_app/widgets/custom_sized_box/custom_sized_box.dart';
 import 'package:swooshed_app/model/choose_languages_model/choose_language.dart';
 
+import '../../../utils/app_images/app_images.dart';
 import '../../../widgets/custom_text/custom_text.dart';
 
 class ChooseLanguagePofile extends StatefulWidget {
@@ -36,14 +38,40 @@ class _ChooseLanguageScreenState extends State<ChooseLanguagePofile> {
               CustomSizedBox(
                 height: 76.h,
               ),
-              CustomText(
-                text: AppLocalizations.of(context)!.language,
-                style: AppTextStyles.heading1,
-              ),
-              CustomText(
-                text: AppLocalizations.of(context)!
-                    .choose_your_language_preferences,
-                style: AppTextStyles.fontSize20to400,
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: Image.asset(
+                      AppImages.profileBackArrow,
+                      height: 25,
+                      // width: 20,
+                    ),
+                  ),
+                  CustomSizedBox(
+                    width: 10.w,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomText(
+                        text: AppLocalizations.of(context)!.language,
+                        style: AppTextStyles.heading1,
+                      ),
+                      SizedBox(
+                        width: 250,
+                        child: CustomText(
+                          text: AppLocalizations.of(context)!
+                              .choose_your_language_preferences,
+                          style: AppTextStyles.fontSize20to400,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
               CustomSizedBox(
                 height: 32.h,
