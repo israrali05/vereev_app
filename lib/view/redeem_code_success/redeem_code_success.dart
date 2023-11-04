@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../utils/app_colors/app_colors.dart';
 import '../../utils/app_images/app_images.dart';
 import '../../utils/app_styles/app_text_styles.dart';
 import '../../widgets/custom_button/custom_buttons.dart';
-import '../../widgets/custom_container/custom_container.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../widgets/custom_image/custom_image.dart';
 import '../../widgets/custom_text/custom_text.dart';
@@ -37,7 +35,7 @@ class RedeemCodeSuccess extends StatelessWidget {
                 ),
                 SizedBox(height: 24),
                 CustomText(
-                  text:AppLocalizations.of(context)!.congrats,
+                  text: AppLocalizations.of(context)!.congrats,
                   style: AppTextStyles.fontSize14to400,
                   textAlign: TextAlign.center,
                 ),
@@ -49,7 +47,9 @@ class RedeemCodeSuccess extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*.35,),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .35,
+                ),
                 CustomButton(
                   text: AppLocalizations.of(context)!.startChecking,
                   onPressed: () {},
@@ -58,7 +58,6 @@ class RedeemCodeSuccess extends StatelessWidget {
             ),
           ),
         ),
-
       ),
     );
   }
