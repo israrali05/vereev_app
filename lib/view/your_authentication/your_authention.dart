@@ -5,7 +5,6 @@ import 'package:swooshed_app/utils/app_fonts/app_fonts.dart';
 import 'package:swooshed_app/widgets/botton_widget.dart';
 import 'package:swooshed_app/widgets/custom_sized_box/custom_sized_box.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 import '../../utils/app_images/app_images.dart';
 import 'components/components.dart';
 import '../../widgets/gallery_section.dart';
@@ -128,13 +127,14 @@ class _YourAuthenticationScreenState extends State<YourAuthenticationScreen> {
               ),
               const GallerySection(),
               Container(
+                // margin: EdgeInsets.only(bottom: 10),
                 child: clickCount == 2
                     ? null
                     : BottonWidget(
-                        ontap: () {
+                        onTap: () {
                           changeImage();
                         },
-                        height: 40.h,
+                        height: 50.h,
                         width: double.infinity,
                         text: AppLocalizations.of(context)!.sc,
                       ),

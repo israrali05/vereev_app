@@ -145,49 +145,49 @@ class _DetailsState extends State<Details> {
                               children: [
                                 index < AppTexts.imagesfiles.length
                                     ? Container(
-                                        height: 98.w,
-                                        width: 98.h,
-                                        decoration: BoxDecoration(
-                                          color: AppColors.textColor,
-                                          borderRadius:
-                                              BorderRadius.circular(10.r),
-                                        ),
-                                        child: InkWell(
-                                          child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(10.r),
-                                              child: Image.file(
-                                                File(
-                                                  AppTexts.imagesfiles[
-                                                          index]! ??
-                                                      "",
-                                                ),
-                                                fit: BoxFit.fill,
-                                              )),
-                                        ),
-                                      )
-                                    : Container(
-                                        height: 98.w,
-                                        width: 98.h,
-                                        decoration: BoxDecoration(
-                                          color: AppColors.textColor,
-                                          borderRadius:
-                                              BorderRadius.circular(10.r),
-                                        ),
-                                        child: InkWell(
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(10.r),
-                                            child: Center(
-                                                child: Image.asset(
-                                              detailsList[index].imgUrl,
-                                              width: 40.w,
-                                              height: 33.h,
-                                              color: AppColors.bgColor,
-                                            )),
+                                  height: 98.w,
+                                  width: 98.h,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.textColor,
+                                    borderRadius:
+                                    BorderRadius.circular(10.r),
+                                  ),
+                                  child: InkWell(
+                                    child: ClipRRect(
+                                        borderRadius:
+                                        BorderRadius.circular(10.r),
+                                        child: Image.file(
+                                          File(
+                                            AppTexts.imagesfiles[
+                                            index]! ??
+                                                "",
                                           ),
-                                        ),
-                                      ),
+                                          fit: BoxFit.fill,
+                                        )),
+                                  ),
+                                )
+                                    : Container(
+                                  height: 98.w,
+                                  width: 98.h,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.textColor,
+                                    borderRadius:
+                                    BorderRadius.circular(10.r),
+                                  ),
+                                  child: InkWell(
+                                    child: ClipRRect(
+                                      borderRadius:
+                                      BorderRadius.circular(10.r),
+                                      child: Center(
+                                          child: Image.asset(
+                                            detailsList[index].imgUrl,
+                                            width: 40.w,
+                                            height: 33.h,
+                                            color: AppColors.bgColor,
+                                          )),
+                                    ),
+                                  ),
+                                ),
                                 CustomSizedBox(
                                   height: 10.h,
                                 ),

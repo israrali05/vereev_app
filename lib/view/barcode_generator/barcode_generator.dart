@@ -115,7 +115,7 @@ class _BarcodeGenerateScreenState extends State<BarcodeGenerateScreen> {
                 BottonWidget(
                   height: 50.h,
                   width: double.infinity,
-                  ontap: () {
+                  onTap: () {
                     // Update qrData with the content from the text field
                     setState(() {
                       qrData = _textController.text;

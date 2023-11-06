@@ -14,11 +14,11 @@ class GetStarted extends StatelessWidget {
     GetStarted({super.key,});
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: AppColors.bgColor,
-        body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+    return Scaffold(
+      backgroundColor: AppColors.bgColor,
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: 40,

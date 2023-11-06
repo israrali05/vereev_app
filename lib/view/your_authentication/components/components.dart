@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:swooshed_app/utils/app_colors/app_colors.dart';
+import 'package:swooshed_app/view/sign_in/login.dart';
 import 'package:swooshed_app/widgets/custom_sized_box/custom_sized_box.dart';
 import '../../../utils/app_fonts/app_fonts.dart';
 import '../../../utils/app_images/app_images.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-
 class HeaderAuthentication extends StatelessWidget {
   final Widget text;
   final Widget img;
+
   const HeaderAuthentication({
     super.key,
     required this.text,
@@ -26,8 +27,8 @@ class HeaderAuthentication extends StatelessWidget {
           width: double.infinity,
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(AppImages
-                  .yourauthenticationBgPic), // Replace with your image asset path
+              image: AssetImage(AppImages.yourauthenticationBgPic),
+              // Replace with your image asset path
               fit: BoxFit.fill, // You can adjust the fit as needed
             ),
           ),
@@ -60,9 +61,14 @@ class HeaderAuthentication extends StatelessWidget {
                       height: 16,
                     ),
                   ),
-                  Image.asset(
-                    AppImages.yourauthenticationCartIcon,
-                    height: 24,
+                  GestureDetector(
+                    onTap: (){
+                      Get.to(LoginScreen());
+                    },
+                    child: Image.asset(
+                      AppImages.yourauthenticationCartIcon,
+                      height: 24,
+                    ),
                   ),
                 ],
               ),

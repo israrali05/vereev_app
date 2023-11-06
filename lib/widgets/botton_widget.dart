@@ -5,7 +5,7 @@ import 'package:swooshed_app/utils/app_colors/app_colors.dart';
 import '../utils/app_fonts/app_fonts.dart';
 
 class BottonWidget extends StatelessWidget {
-  final void Function()? ontap;
+  final void Function()? onTap;
   final String text;
   final double height;
   final double width;
@@ -14,12 +14,12 @@ class BottonWidget extends StatelessWidget {
       required this.text,
       required this.height,
       required this.width,
-      this.ontap});
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: ontap,
+      onTap: onTap,
       child: Container(
         width: width,
         height: height,
