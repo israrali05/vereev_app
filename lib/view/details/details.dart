@@ -48,70 +48,70 @@ class _DetailsState extends State<Details> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.bgColor,
-        body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-            child: Column(
-              children: [
-                CustomAppBar(
-                    leadingIcon: Icons.arrow_back_ios_new,
-                    leadingText: AppLocalizations.of(context)!.step_3,
-                    trailText: ''),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 20.w,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(
-                        text: AppLocalizations.of(context)!.item_details,
-                        style: AppTextStyles.heading1,
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+          child: Column(
+            children: [
+              CustomAppBar(
+                  leadingIcon: Icons.arrow_back_ios_new,
+                  leadingText: AppLocalizations.of(context)!.step_3,
+                  trailText: ''),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20.w,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomText(
+                      text: AppLocalizations.of(context)!.item_details,
+                      style: AppTextStyles.heading1,
+                    ),
+                    SizedBox(height: 24),
+                    TextForm(
+                      hintText: AppLocalizations.of(context)!.product,
+                      prefixIcon: CustomImage(
+                        imgUrl: AppImages.product_name,
+                        color: AppColors.bgColor,
+                        width: 20.w,
+                        height: 19.h,
                       ),
-                      SizedBox(height: 24),
-                      TextForm(
-                        hintText: AppLocalizations.of(context)!.product,
-                        prefixIcon: CustomImage(
-                          imgUrl: AppImages.product_name,
-                          color: AppColors.bgColor,
-                          width: 20.w,
-                          height: 19.h,
+                    ),
+                    SizedBox(height: 12.h),
+                    TextForm(
+                      hintText: AppLocalizations.of(context)!.notes,
+                      prefixIcon: CustomImage(
+                        imgUrl: AppImages.notes,
+                        color: AppColors.bgColor,
+                        width: 20.w,
+                        height: 19.h,
+                      ),
+                    ),
+                    SizedBox(height: 12),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CustomText(
+                          text: AppLocalizations.of(context)!.images,
+                          style: AppTextStyles.fontSize14to400
+                              .copyWith(fontWeight: FontWeight.w700),
                         ),
-                      ),
-                      SizedBox(height: 12.h),
-                      TextForm(
-                        hintText: AppLocalizations.of(context)!.notes,
-                        prefixIcon: CustomImage(
-                          imgUrl: AppImages.notes,
-                          color: AppColors.bgColor,
-                          width: 20.w,
-                          height: 19.h,
-                        ),
-                      ),
-                      SizedBox(height: 12),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CustomText(
-                            text: AppLocalizations.of(context)!.images,
-                            style: AppTextStyles.fontSize14to400
-                                .copyWith(fontWeight: FontWeight.w700),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: GestureDetector(
-                                onTap: () {
-                                  Get.to(() => CategoryTwo());
-                                },
-                                child: Image.asset(
-                                  AppImages.itemsDetailsQuestionMark,
-                                  height: 18,
-                                )),
-                          )
-                        ],
-                      ),
-                      GridView.builder(
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: GestureDetector(
+                              onTap: () {
+                                Get.to(() => CategoryTwo());
+                              },
+                              child: Image.asset(
+                                AppImages.itemsDetailsQuestionMark,
+                                height: 18,
+                              )),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 245.h,
+                      child: GridView.builder(
                         physics: BouncingScrollPhysics(),
                         itemCount: detailsList.length,
                         shrinkWrap: true,
@@ -159,9 +159,9 @@ class _DetailsState extends State<Details> {
                                   ),
                                 ),
                               ),
-                              CustomSizedBox(
-                                height: 10.h,
-                              ),
+                              // CustomSizedBox(
+                              //   height: 10.h,
+                              // ),
                               CustomText(
                                 text: detailsList[index].text,
                                 style: AppTextStyles.fontSize14to400.copyWith(
@@ -173,11 +173,11 @@ class _DetailsState extends State<Details> {
                           );
                         },
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         bottomNavigationBar: CustomContainer(

@@ -27,20 +27,17 @@ class Brand extends StatelessWidget {
           children: [
             CustomAppBar(
               leadingIcon: Icons.arrow_back_ios_new,
-              leadingText: AppLocalizations.of
-                (context)!.step_2,
-              trailText: AppLocalizations.of
-                (context)!.skip,
+              leadingText: AppLocalizations.of(context)!.step_2,
+              trailText: AppLocalizations.of(context)!.skip,
             ),
             Padding(
               padding: EdgeInsets.only(left: 22.w),
               child: CustomText(
-                text: AppLocalizations.of
-                  (context)!.choose,
+                text: AppLocalizations.of(context)!.choose,
                 style: AppTextStyles.heading1,
               ),
             ),
-            SizedBox(height: 32.h),
+            SizedBox(height: 20.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 13.w),
               child: TextForm(
@@ -59,7 +56,7 @@ class Brand extends StatelessWidget {
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 32.h),
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
           child: Column(
             children: [
               SizedBox(height: 10.h),
@@ -81,8 +78,7 @@ class Brand extends StatelessWidget {
         height: 50.h,
         margin: EdgeInsets.all(30.r),
         child: CustomButton(
-          text: AppLocalizations.of
-            (context)!.next,
+          text: AppLocalizations.of(context)!.next,
           onPressed: () {
             Navigator.push(
               context,
