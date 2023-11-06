@@ -81,6 +81,7 @@ class AppImages {
   static const tickLogo = "assets/images/png_images/tick.png";
   static const homeBg = "assets/images/png_images/home_bg.png";
   static const searchBg = "assets/images/png_images/searchBg.png";
+
   // static const dummy = "assets/images/png_images/dummy.jpg";
 
   /// Profile Images png
@@ -128,7 +129,7 @@ class AppImages {
   static const String qrCertificateScan =
       "assets/your_authentication/qr_scan_certificate.png";
   static const String histryGreenclock = "assets/images/History/clockGreen.png";
-  static const String historypaymentfailed =
+  static const String historyPaymentFailed =
       "assets/images/History/Tranasction_failed.png";
 
   /// E Details Payment
@@ -238,4 +239,11 @@ class AppImages {
   static String side_tag2 = 'assets/images/png_images/side_tag2.png';
   static String receipt2 = 'assets/images/png_images/receipt2.png';
   static String promo = 'assets/images/png_images/promo.png';
+
+  ///Camera Images
+  static String galleryImage = 'assets/images/png_images/gallary.png';
+
+  static String cameraImage = 'assets/images/png_images/camera_button.png';
+  static String flashImage = 'assets/images/png_images/flash_light.png';
+  static String appearanceCamera = 'assets/images/png_images/appearance (2).png';
 }

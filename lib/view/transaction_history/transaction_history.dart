@@ -101,7 +101,7 @@ class TransactionHistory extends StatelessWidget {
                   title: AppLocalizations.of(context)!.transaction_success,
                 ),
                 ContainerTransactionHistory(
-                  iconPath: AppImages.historypaymentfailed,
+                  iconPath: AppImages.historyPaymentFailed,
                   subtitle: AppLocalizations.of(context)!.your_top_up_failed,
                   title: AppLocalizations.of(context)!.transaction_failed,
                 ),
