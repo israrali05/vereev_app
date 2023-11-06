@@ -1,3 +1,5 @@
+import 'dart:io';
+
 class AppTexts {
   static const notLoginText1 = "We Didn’t Recognize You";
   static const notLoginText2 =
@@ -23,7 +25,7 @@ class AppTexts {
   //Payment Method Text
   static const paymentMethodText1 = "Payment Method";
   static const paymentMethodText2 = "Choose payment method you want to use for\npaying your Swooshed Token";
-
+ static  List<String?> imagesfiles = [];
   //Checkout Screen Text
   static const checkoutText1 = "Summary Order";
   static const checkoutText2 = "Check your item before doing the payment";

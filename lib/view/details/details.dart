@@ -1,12 +1,14 @@
-
 import 'dart:io';
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:swooshed_app/utils/app_constants/app_constant.dart';
 import 'package:swooshed_app/utils/app_images/app_images.dart';
 import 'package:swooshed_app/utils/app_styles/app_text_styles.dart';
+import 'package:swooshed_app/view/camera/my_camera.dart';
 import 'package:swooshed_app/view/payment_method/payment_method.dart';
 import 'package:swooshed_app/widgets/custom_app_bar/custom_app_bar.dart';
 import 'package:swooshed_app/widgets/custom_button/custom_buttons.dart';
@@ -17,10 +19,13 @@ import 'package:swooshed_app/widgets/custom_text/custom_text.dart';
 import 'package:swooshed_app/widgets/custom_text_form_field/custom_text_field.dart';
 
 import '../../Model/detail_model/detail_model.dart';
+import '../../main.dart';
 import '../../utils/app_colors/app_colors.dart';
 
 class Details extends StatefulWidget {
-  const Details({super.key});
+  const Details({super.key, required this.images});
+
+  final images;
 
   @override
   State<Details> createState() => _DetailsState();
@@ -28,31 +33,36 @@ class Details extends StatefulWidget {
 
 class _DetailsState extends State<Details> {
   File? _image;
-  List<File?> _images = List.generate(12, (_) => null);
 
+  ///Image Picker from gallery
   Future<void> chooseImage(ImageSource source, int index) async {
     final image = await ImagePicker().pickImage(source: source);
     if (image == null) {
+      print("Nothing is printed");
       return;
     } else {
       final tempImage = File(image.path);
       setState(() {
-        _images[index] = tempImage;
+        print("image store");
+        // AppTexts.imagesfiles[index] = tempImage;
+        AppTexts.imagesfiles.add(widget.images[index]);
       });
     }
   }
 
   @override
   Widget build(BuildContext context) {
-
     final detailsList = detailList(context);
+
+    ///Showing my data length
+    print("data are ${AppTexts.imagesfiles.length}");
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.bgColor,
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
             child: Column(
               children: [
                 CustomAppBar(
@@ -70,7 +80,7 @@ class _DetailsState extends State<Details> {
                         text: AppLocalizations.of(context)!.item_details,
                         style: AppTextStyles.heading1,
                       ),
-                      SizedBox(height: 24),
+                      SizedBox(height: 24.h),
                       TextForm(
                         hintText: AppLocalizations.of(context)!.product,
                         prefixIcon: CustomImage(
@@ -90,7 +100,7 @@ class _DetailsState extends State<Details> {
                           height: 19.h,
                         ),
                       ),
-                      SizedBox(height: 12),
+                      SizedBox(height: 12.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -122,54 +132,69 @@ class _DetailsState extends State<Details> {
                           mainAxisSpacing: 12,
                         ),
                         itemBuilder: (context, index) {
-                          return Column(
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  height: 98.w,
-                                  width: 98.h,
-                                  decoration: BoxDecoration(
-                                    color: AppColors.textColor,
-                                    borderRadius: BorderRadius.circular(10.r),
-                                  ),
-                                  child: InkWell(
-                                    // onTap: () {
-                                    //   chooseImage(ImageSource.camera);
-                                    // },
-                                    onTap: () {
-                                      chooseImage(ImageSource.camera, index);
-                                    },
-                                    child: _images[index] != null
-                                        ? ClipRRect(
+                          return GestureDetector(
+                            onTap: () {
+                              Get.to(CameraScreen(cameras));
+                            },
+                            child: Column(
+                              children: [
+                                index < AppTexts.imagesfiles.length
+                                    ? Container(
+                                        height: 98.w,
+                                        width: 98.h,
+                                        decoration: BoxDecoration(
+                                          color: AppColors.textColor,
+                                          borderRadius:
+                                              BorderRadius.circular(10.r),
+                                        ),
+                                        child: InkWell(
+                                          child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(10.r),
+                                              child: Image.file(
+                                                File(
+                                                  AppTexts.imagesfiles[
+                                                          index]! ??
+                                                      "",
+                                                ),
+                                                fit: BoxFit.fill,
+                                              )),
+                                        ),
+                                      )
+                                    : Container(
+                                        height: 98.w,
+                                        width: 98.h,
+                                        decoration: BoxDecoration(
+                                          color: AppColors.textColor,
+                                          borderRadius:
+                                              BorderRadius.circular(10.r),
+                                        ),
+                                        child: InkWell(
+                                          child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(10.r),
-                                            child: Image.file(
-                                              _images[index]!,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          )
-                                        : Center(
-                                            child: CustomImage(
-                                              height: 35.h,
-                                              width: 37.w,
+                                            child: Center(
+                                                child: Image.asset(
+                                              detailsList[index].imgUrl,
+                                              width: 40.w,
+                                              height: 33.h,
                                               color: AppColors.bgColor,
-                                              imgUrl: detailsList[index].imgUrl,
-                                            ),
+                                            )),
                                           ),
+                                        ),
+                                      ),
+                                CustomSizedBox(
+                                  height: 10.h,
+                                ),
+                                CustomText(
+                                  text: detailsList[index].text,
+                                  style: AppTextStyles.fontSize14to400.copyWith(
+                                    fontWeight: FontWeight.w700,
+                                    letterSpacing: 0.35,
                                   ),
                                 ),
-                              ),
-                              CustomSizedBox(
-                                height: 10.h,
-                              ),
-                              CustomText(
-                                text: detailsList[index].text,
-                                style: AppTextStyles.fontSize14to400.copyWith(
-                                  fontWeight: FontWeight.w700,
-                                  letterSpacing: 0.35,
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           );
                         },
                       ),
@@ -182,6 +207,7 @@ class _DetailsState extends State<Details> {
         ),
         bottomNavigationBar: CustomContainer(
           height: 50.h,
+          borderRadius: BorderRadius.circular(4.r),
           margin: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
           child: CustomButton(
             text: AppLocalizations.of(context)!.next,
