@@ -2,19 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:swooshed_app/utils/app_colors/app_colors.dart';
-import 'package:swooshed_app/utils/app_constants/app_constant.dart';
 import 'package:swooshed_app/utils/app_images/app_images.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:swooshed_app/utils/app_styles/app_text_styles.dart';
 import 'package:swooshed_app/view/check_out/summary_components/summary_components.dart';
 import 'package:swooshed_app/view/payment_method/payment_accounts_components/accoounts.dart';
 import 'package:swooshed_app/view/payment_method_1/payment_method_1.dart';
-import 'package:swooshed_app/view/qr_certificate/qr_certificate.dart';
 import 'package:swooshed_app/widgets/custom_button/custom_buttons.dart';
 import 'package:swooshed_app/widgets/custom_sized_box/custom_sized_box.dart';
 import 'package:swooshed_app/widgets/custom_text/custom_text.dart';
 import '../barcode_generator/barcode_generator.dart';
-import '../qr_certificate/qr_cerificate_header.dart';
 
 class CheckoutScreen extends StatefulWidget {
   const CheckoutScreen({super.key});

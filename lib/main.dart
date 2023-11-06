@@ -17,7 +17,6 @@ import 'view/sign_up/sign_up.dart';
 import 'view/transaction_history/transaction_history.dart';
 import 'view/varify_success_email/varify_succes_email.dart';
 
-
 List<CameraDescription> cameras = [];
 Future<void> main() async {
   try {
@@ -29,10 +28,8 @@ Future<void> main() async {
   runApp(MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
 
   @override
   Widget build(BuildContext context) {

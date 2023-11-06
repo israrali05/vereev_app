@@ -6,7 +6,6 @@ import 'package:swooshed_app/widgets/botton_widget.dart';
 import 'package:swooshed_app/widgets/custom_sized_box/custom_sized_box.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-
 import '../../utils/app_images/app_images.dart';
 import 'components/components.dart';
 import '../../widgets/gallery_section.dart';
@@ -61,8 +60,9 @@ class _YourAuthenticationScreenState extends State<YourAuthenticationScreen> {
                     ),
                   )
                 : Text(
-                    clickCount == 1 ? AppLocalizations.of(context)!.fake :
-                    AppLocalizations.of(context)!.inde,
+                    clickCount == 1
+                        ? AppLocalizations.of(context)!.fake
+                        : AppLocalizations.of(context)!.inde,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: clickCount == 1
@@ -127,9 +127,6 @@ class _YourAuthenticationScreenState extends State<YourAuthenticationScreen> {
                 height: 5.h,
               ),
               const GallerySection(),
-              CustomSizedBox(
-                height: 15.h,
-              ),
               Container(
                 child: clickCount == 2
                     ? null

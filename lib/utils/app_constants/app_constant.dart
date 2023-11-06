@@ -1,4 +1,3 @@
-import 'dart:io';
 
 class AppTexts {
   static const notLoginText1 = "We Didn’t Recognize You";

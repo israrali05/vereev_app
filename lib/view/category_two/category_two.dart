@@ -3,13 +3,10 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:open_file/open_file.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:swooshed_app/utils/app_colors/app_colors.dart';
 import 'package:swooshed_app/utils/app_styles/app_text_styles.dart';
-import 'package:swooshed_app/view/redeem_promo_code/redeem_promo_code.dart';
-import 'package:swooshed_app/widgets/custom_button/custom_buttons.dart';
 import 'package:swooshed_app/widgets/custom_image/custom_image.dart';
 import 'package:swooshed_app/widgets/custom_text/custom_text.dart';
 
