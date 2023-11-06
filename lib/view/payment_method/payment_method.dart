@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:swooshed_app/view/payment_method/components/addcard.dart';
 import 'package:swooshed_app/view/payment_success/payment_success.dart';
 import 'package:swooshed_app/view/payment_success1/payment_succcess_1.dart';
 
@@ -372,6 +373,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                 padding: EdgeInsets.symmetric(horizontal: 32.w),
                 child: PaymentMethodAccounts(
                   onTap: () {
+                    showBottomSheet(context);
                     handleContainerTap(4);
                   },
                   icon: Icons.add,
@@ -385,6 +387,33 @@ class _PaymentMethodState extends State<PaymentMethod> {
           ),
         ),
       ),
+    );
+  }
+
+  void showBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Container(
+          color: Colors.white, // White background
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20.0), // Add top-left border radius
+                topRight: Radius.circular(20.0), // Add top-right border radius
+              ),
+            ),
+            child: Container(
+              height: 400.h,
+              child: Column(
+                children: [addCard()],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }
