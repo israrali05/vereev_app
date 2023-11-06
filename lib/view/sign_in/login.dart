@@ -23,20 +23,21 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   ///Form Key Object
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   ///Objects for my Text Form Field Controller
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-///Disposing my controller data
+
+  ///Disposing my controller data
   @override
   void dispose() {
     _usernameController.dispose();
     _passwordController.dispose();
     super.dispose();
   }
+
   String _username = '';
   String _password = '';
 
@@ -57,7 +58,6 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.bgColor,
-
       body: Form(
         key: _formKey,
         child: SizedBox(
@@ -72,18 +72,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CustomSizedBox(
-                    height: 80.h,
+                    height: 90.h,
                   ),
 
                   ///App Logo Image
                   Image.asset(
-                    AppImages.logoPng,
+                    AppImages.appIconPng,
                     width: 100.w,
-                    height: 98.h,
+                    height: 90.h,
                   ),
-                  CustomSizedBox(
-                    height: 40.h,
-                  ),
+                  // CustomSizedBox(
+                  //   height: 2.h,
+                  // ),
 
                   ///Welcome Back Text
                   Padding(
@@ -112,7 +112,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextForm(
                     onSaved: (value) => _username = value ?? '',
                     controller: _usernameController,
-                    prefixIcon: SvgPicture.asset(AppImages.userNameIcon, color: AppColors.bgColor),
+                    prefixIcon: SvgPicture.asset(AppImages.userNameIcon,
+                        color: AppColors.bgColor),
                     hintText: AppLocalizations.of(context)!.username,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -144,7 +145,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextForm(
                     onSaved: (value) => _password = value ?? '',
                     controller: _passwordController,
-                    prefixIcon: SvgPicture.asset(AppImages.userPasswordIcon, color: AppColors.bgColor),
+                    prefixIcon: SvgPicture.asset(AppImages.userPasswordIcon,
+                        color: AppColors.bgColor),
                     hintText: AppLocalizations.of(context)!.password,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -183,11 +185,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   CustomSizedBox(
                     height: 32.h,
                   ),
+
                   ///Login with facebook and google
                   RowComponent(),
                   CustomSizedBox(
                     height: 10.h,
                   ),
+
                   ///Login with facebook and google Icons
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -212,19 +216,21 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   ///Don’t have an account
                   GestureDetector(
-                    onTap: () {
-    Get.toNamed('/SignUpScreen');
-                    },
-                    child: CustomText(text: AppLocalizations.of(context)!.dont_have_account)),
+                      onTap: () {
+                        Get.toNamed('/SignUpScreen');
+                      },
+                      child: CustomText(
+                          text:
+                              AppLocalizations.of(context)!.dont_have_account)),
 
                   CustomSizedBox(height: 5.h),
 
-                 ///Sign Up Button
+                  ///Sign Up Button
 
-                CustomSizedBox(
-                  height: 5.h,
-                ),
-                GestureDetector(
+                  CustomSizedBox(
+                    height: 5.h,
+                  ),
+                  GestureDetector(
                     onTap: () {
                       Get.toNamed('/SignUpScreen');
                     },

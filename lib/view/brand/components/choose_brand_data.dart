@@ -11,7 +11,6 @@ import '../../../widgets/custom_text/custom_text.dart';
 
 // ignore: must_be_immutable
 class ChooseBrandData extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     final _brandData = getData(context);
@@ -23,31 +22,32 @@ class ChooseBrandData extends StatelessWidget {
       itemBuilder: (context, index) {
         return CustomContainer(
           margin: EdgeInsets.only(bottom: 12.r),
-          height: 70.h,
+          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5.r),
           width: MediaQuery.of(context).size.width,
           borderRadius: BorderRadius.circular(10),
           color: AppColors.textColor,
           child: ListTile(
             leading: Container(
+              padding: EdgeInsets.all(8.r),
               height: 50.h,
-              width: 50.w,
+              width: 55.w,
               decoration: BoxDecoration(
                 color: AppColors.textColor,
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey,
                     offset: Offset(0, 4),
-                    blurRadius: 4,
-                    spreadRadius: 2,
+                    blurRadius: 5,
+                    spreadRadius: 1,
                   ),
                 ],
-                borderRadius: BorderRadius.circular(16.r),
+                borderRadius: BorderRadius.circular(18.r),
               ),
               child: Center(
                 child: CustomImage(
                   imgUrl: _brandData[index].imgUrl,
-                  width: 27.w,
-                  height: 32.h,
+                  // width: 27.w,
+                  // height: 32.h,
                 ),
               ),
             ),
@@ -56,7 +56,10 @@ class ChooseBrandData extends StatelessWidget {
               text: _brandData[index].titleText,
               style: AppTextStyles.fontSize14to400
                   .copyWith(color: AppColors.bgColor)
-                  .copyWith(letterSpacing: 0.35, fontWeight: FontWeight.w300,),
+                  .copyWith(
+                    letterSpacing: 0.35,
+                    fontWeight: FontWeight.w300,
+                  ),
             ),
             subtitle: CustomText(
               textAlign: TextAlign.start,

@@ -8,7 +8,11 @@ import 'package:image_picker/image_picker.dart';
 import 'package:swooshed_app/utils/app_constants/app_constant.dart';
 import 'package:swooshed_app/utils/app_images/app_images.dart';
 import 'package:swooshed_app/utils/app_styles/app_text_styles.dart';
+
+import 'package:swooshed_app/view/category_two/category_two.dart';
+
 import 'package:swooshed_app/view/camera/my_camera.dart';
+
 import 'package:swooshed_app/view/payment_method/payment_method.dart';
 import 'package:swooshed_app/widgets/custom_app_bar/custom_app_bar.dart';
 import 'package:swooshed_app/widgets/custom_button/custom_buttons.dart';
@@ -59,76 +63,77 @@ class _DetailsState extends State<Details> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.bgColor,
-        body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
-            child: Column(
-              children: [
-                CustomAppBar(
-                    leadingIcon: Icons.arrow_back_ios_new,
-                    leadingText: AppLocalizations.of(context)!.step_3,
-                    trailText: ''),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 20.w,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(
-                        text: AppLocalizations.of(context)!.item_details,
-                        style: AppTextStyles.heading1,
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+          child: Column(
+            children: [
+              CustomAppBar(
+                  leadingIcon: Icons.arrow_back_ios_new,
+                  leadingText: AppLocalizations.of(context)!.step_3,
+                  trailText: ''),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20.w,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomText(
+                      text: AppLocalizations.of(context)!.item_details,
+                      style: AppTextStyles.heading1,
+                    ),
+                    SizedBox(height: 24),
+                    TextForm(
+                      hintText: AppLocalizations.of(context)!.product,
+                      prefixIcon: CustomImage(
+                        imgUrl: AppImages.product_name,
+                        color: AppColors.bgColor,
+                        width: 20.w,
+                        height: 19.h,
                       ),
-                      SizedBox(height: 24.h),
-                      TextForm(
-                        hintText: AppLocalizations.of(context)!.product,
-                        prefixIcon: CustomImage(
-                          imgUrl: AppImages.product_name,
-                          color: AppColors.bgColor,
-                          width: 20.w,
-                          height: 19.h,
+                    ),
+                    SizedBox(height: 12.h),
+                    TextForm(
+                      hintText: AppLocalizations.of(context)!.notes,
+                      prefixIcon: CustomImage(
+                        imgUrl: AppImages.notes,
+                        color: AppColors.bgColor,
+                        width: 20.w,
+                        height: 19.h,
+                      ),
+                    ),
+                    SizedBox(height: 12),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CustomText(
+                          text: AppLocalizations.of(context)!.images,
+                          style: AppTextStyles.fontSize14to400
+                              .copyWith(fontWeight: FontWeight.w700),
                         ),
-                      ),
-                      SizedBox(height: 12.h),
-                      TextForm(
-                        hintText: AppLocalizations.of(context)!.notes,
-                        prefixIcon: CustomImage(
-                          imgUrl: AppImages.notes,
-                          color: AppColors.bgColor,
-                          width: 20.w,
-                          height: 19.h,
-                        ),
-                      ),
-                      SizedBox(height: 12.h),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CustomText(
-                            text: AppLocalizations.of(context)!.images,
-                            style: AppTextStyles.fontSize14to400
-                                .copyWith(fontWeight: FontWeight.w700),
-                          ),
-                          IconButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            icon: Icon(
-                              Icons.question_mark_sharp,
-                              size: 14,
-                              color: AppColors.textColor,
-                            ),
-                          ),
-                        ],
-                      ),
-                      GridView.builder(
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: GestureDetector(
+                              onTap: () {
+                                Get.to(() => CategoryTwo());
+                              },
+                              child: Image.asset(
+                                AppImages.itemsDetailsQuestionMark,
+                                height: 18,
+                              )),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 245.h,
+                      child: GridView.builder(
                         physics: BouncingScrollPhysics(),
                         itemCount: detailsList.length,
                         shrinkWrap: true,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 3,
                           crossAxisSpacing: 12,
-                          mainAxisExtent: 110.h,
+                          mainAxisExtent: 120.h,
                           mainAxisSpacing: 12,
                         ),
                         itemBuilder: (context, index) {
@@ -140,49 +145,49 @@ class _DetailsState extends State<Details> {
                               children: [
                                 index < AppTexts.imagesfiles.length
                                     ? Container(
-                                        height: 98.w,
-                                        width: 98.h,
-                                        decoration: BoxDecoration(
-                                          color: AppColors.textColor,
-                                          borderRadius:
-                                              BorderRadius.circular(10.r),
-                                        ),
-                                        child: InkWell(
-                                          child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(10.r),
-                                              child: Image.file(
-                                                File(
-                                                  AppTexts.imagesfiles[
-                                                          index]! ??
-                                                      "",
-                                                ),
-                                                fit: BoxFit.fill,
-                                              )),
-                                        ),
-                                      )
-                                    : Container(
-                                        height: 98.w,
-                                        width: 98.h,
-                                        decoration: BoxDecoration(
-                                          color: AppColors.textColor,
-                                          borderRadius:
-                                              BorderRadius.circular(10.r),
-                                        ),
-                                        child: InkWell(
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(10.r),
-                                            child: Center(
-                                                child: Image.asset(
-                                              detailsList[index].imgUrl,
-                                              width: 40.w,
-                                              height: 33.h,
-                                              color: AppColors.bgColor,
-                                            )),
+                                  height: 98.w,
+                                  width: 98.h,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.textColor,
+                                    borderRadius:
+                                    BorderRadius.circular(10.r),
+                                  ),
+                                  child: InkWell(
+                                    child: ClipRRect(
+                                        borderRadius:
+                                        BorderRadius.circular(10.r),
+                                        child: Image.file(
+                                          File(
+                                            AppTexts.imagesfiles[
+                                            index]! ??
+                                                "",
                                           ),
-                                        ),
-                                      ),
+                                          fit: BoxFit.fill,
+                                        )),
+                                  ),
+                                )
+                                    : Container(
+                                  height: 98.w,
+                                  width: 98.h,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.textColor,
+                                    borderRadius:
+                                    BorderRadius.circular(10.r),
+                                  ),
+                                  child: InkWell(
+                                    child: ClipRRect(
+                                      borderRadius:
+                                      BorderRadius.circular(10.r),
+                                      child: Center(
+                                          child: Image.asset(
+                                            detailsList[index].imgUrl,
+                                            width: 40.w,
+                                            height: 33.h,
+                                            color: AppColors.bgColor,
+                                          )),
+                                    ),
+                                  ),
+                                ),
                                 CustomSizedBox(
                                   height: 10.h,
                                 ),
@@ -198,11 +203,11 @@ class _DetailsState extends State<Details> {
                           );
                         },
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         bottomNavigationBar: CustomContainer(

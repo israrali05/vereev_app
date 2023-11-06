@@ -197,7 +197,7 @@ class _QrCertificateState extends State<QrCertificate> {
                               height: 40,
                               text: AppLocalizations.of(context)!.saveCertificate,
                               width: double.infinity,
-                              ontap: () {},
+                              onTap: () {},
                             ),
                 ),
                 CustomSizedBox(
@@ -211,7 +211,7 @@ class _QrCertificateState extends State<QrCertificate> {
                           ? AppLocalizations.of(context)!.printP
                           : AppLocalizations.of(context)!.printCertificate,
                   width: double.infinity,
-                  ontap: () {
+                  onTap: () {
                     changeImage();
                   },
                 ),

@@ -1,12 +1,11 @@
 import 'dart:io';
 
-
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:open_file/open_file.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:swooshed_app/utils/app_colors/app_colors.dart';
 import 'package:swooshed_app/utils/app_styles/app_text_styles.dart';
 import 'package:swooshed_app/view/redeem_promo_code/redeem_promo_code.dart';
@@ -27,15 +26,32 @@ class CategoryTwo extends StatefulWidget {
 }
 
 class _CategoryTwoState extends State<CategoryTwo> {
-  List<DetailModel> _detailList = [
-    DetailModel(text: 'Appearance', imgUrl: AppImages.appearance2),
-    DetailModel(text: 'FrontSide', imgUrl: AppImages.front_side2),
-    DetailModel(text: 'BackSide', imgUrl: AppImages.back_side2),
-    DetailModel(text: 'Inside', imgUrl: AppImages.inside2),
-    DetailModel(text: 'Price Tag', imgUrl: AppImages.price_tag2),
-    DetailModel(text: 'Side Tag', imgUrl: AppImages.side_tag2),
-    DetailModel(text: 'Receipt', imgUrl: AppImages.receipt2),
-  ];
+  List<DetailModel> _detailLists(BuildContext context) {
+    return [
+      DetailModel(
+          text: AppLocalizations.of(context)!.appearance,
+          imgUrl: AppImages.appearance2),
+      DetailModel(
+          text: AppLocalizations.of(context)!.frontSide,
+          imgUrl: AppImages.front_side2),
+      DetailModel(
+          text: AppLocalizations.of(context)!.backSide,
+          imgUrl: AppImages.back_side2),
+      DetailModel(
+          text: AppLocalizations.of(context)!.inside,
+          imgUrl: AppImages.inside2),
+      DetailModel(
+          text: AppLocalizations.of(context)!.priceTag,
+          imgUrl: AppImages.price_tag2),
+      DetailModel(
+          text: AppLocalizations.of(context)!.sideTag,
+          imgUrl: AppImages.side_tag2),
+      DetailModel(
+          text: AppLocalizations.of(context)!.receipt,
+          imgUrl: AppImages.receipt2),
+    ];
+  }
+
   List<PlatformFile?> selectedFiles = List.filled(12, null);
 
   FilePickerResult? result;
@@ -63,6 +79,7 @@ class _CategoryTwoState extends State<CategoryTwo> {
 
   @override
   Widget build(BuildContext context) {
+    final _detailList = _detailLists(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.bgColor,
@@ -74,10 +91,11 @@ class _CategoryTwoState extends State<CategoryTwo> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomText(
-                      text:
-                          'This is the examples of the images you need to submit',
+                      text: AppLocalizations.of(context)!.this_is_the_examples,
+                      textAlign: TextAlign.start,
                       style: AppTextStyles.fontSize14to400,
                     ),
                     SizedBox(height: 24.h),
@@ -88,15 +106,17 @@ class _CategoryTwoState extends State<CategoryTwo> {
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 3,
                           mainAxisSpacing: 8,
-                          crossAxisSpacing: 8),
+                          crossAxisSpacing: 8,
+                          mainAxisExtent: 100.h),
                       itemBuilder: (context, index) {
                         return Column(
                           children: [
                             Expanded(
                               child: CustomContainer(
-                                height: 98,
-                                width: 98,
-                                gradient: AppColors.mediumGradient,
+                                height: 120.h,
+                                width: 98.w,
+                                color: AppColors.textColorWhite,
+                                // gradient: AppColors.mediumGradient,
                                 borderRadius: BorderRadius.circular(10.r),
                                 child: InkWell(
                                   onTap: () {
@@ -105,8 +125,9 @@ class _CategoryTwoState extends State<CategoryTwo> {
                                   child: selectedFiles[index] == null
                                       ? Center(
                                           child: CustomImage(
-                                            height: 28.h,
+                                            height: 25.h,
                                             width: 34.w,
+                                            color: AppColors.bgColor,
                                             imgUrl: _detailList[index].imgUrl,
                                           ),
                                         )
@@ -115,6 +136,7 @@ class _CategoryTwoState extends State<CategoryTwo> {
                                             selectedFiles[index]!.path!,
                                           ),
                                           fit: BoxFit.cover,
+                                          color: AppColors.bgColor,
                                         ),
                                 ),
                               ),
@@ -133,12 +155,6 @@ class _CategoryTwoState extends State<CategoryTwo> {
                     ),
                   ],
                 ),
-              ),
-              CustomButton(
-                text: 'Go To Redeem',
-                onPressed: () {
-                  Get.to(RedeemPromoCode());
-                },
               ),
             ],
           ),

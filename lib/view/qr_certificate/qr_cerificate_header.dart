@@ -98,7 +98,7 @@ class QrCertificateHeader extends StatelessWidget {
             height: 20.h,
           ),
           Text(
-            AppLocalizations.of(context)!.weSwooshed,
+            AppLocalizations.of(context)!.wevereev,
             textAlign: TextAlign.center,
             style: TextStyle(
               color: AppColors.textColorWhite,

@@ -52,22 +52,29 @@ class _PaymentMethod1State extends State<PaymentMethod1> {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ///Total Text
-                CustomText(
-                  text: AppLocalizations.of(context)!.total,
-                  style: AppTextStyles.fontSize12to300,
+                Padding(
+                  padding:  EdgeInsets.only(left: 14.w),
+                  child: CustomText(
+                    text: AppLocalizations.of(context)!.total,
+                    style: AppTextStyles.fontSize12to300,
+                  ),
                 ),
 
                 /// Text 2
-                CustomText(
-                  text: AppLocalizations.of(context)!.iDR,
-                  style:
-                      AppTextStyles.heading1.copyWith(color: AppColors.bgColor),
+                SizedBox(
+                  width: 200,
+                  child: CustomText(
+                    text: AppLocalizations.of(context)!.iDR,
+                    style:
+                        AppTextStyles.heading1.copyWith(color: AppColors.bgColor),
+                  ),
                 ),
                 // GradientText(),
               ],
@@ -75,6 +82,7 @@ class _PaymentMethod1State extends State<PaymentMethod1> {
 
             ///Pay Button
             Container(
+              margin: EdgeInsets.only(top: 20.h),
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
@@ -148,11 +156,14 @@ class _PaymentMethod1State extends State<PaymentMethod1> {
                           ),
 
                           ///Choose Payment Method Text
-                          CustomText(
-                            textAlign: TextAlign.start,
-                            text: AppLocalizations.of(context)!.choose_payment,
-                            style: AppTextStyles.fontSize14to400
-                                .copyWith(fontSize: 14.sp),
+                          CustomSizedBox(
+                            width: 250.w,
+                            child: CustomText(
+                              textAlign: TextAlign.start,
+                              text: AppLocalizations.of(context)!.choose_payment,
+                              style: AppTextStyles.fontSize14to400
+                                  .copyWith(fontSize: 14.sp),
+                            ),
                           ),
                         ],
                       ),

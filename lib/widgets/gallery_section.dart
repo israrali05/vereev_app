@@ -28,46 +28,49 @@ class _GallerySectionState extends State<GallerySection> {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
+    return SizedBox(
+      height: 270.h,
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
+        physics: NeverScrollableScrollPhysics(),
+        itemCount: 9,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () => _pickImage(index),
+            child: Container(
+              // padding: EdgeInsets.all(30),
+              decoration: ShapeDecoration(
+                color: AppColors.textColorWhite,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.r),
+                ),
+              ),
+              child: Center(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15.r),
+                  child: pickedImages[index] != null
+                      ? Image.file(
+                          File(pickedImages[index]!.path),
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          height: double.infinity,
+                        )
+                      : Image.asset(
+                          AppImages.ypurauthenticationgalleypicturelogo,
+                          color: AppColors.bgColor,
+                          width: 25,
+                          height: 25,
+                        ),
+                ),
+              ),
+            ),
+          );
+        },
       ),
-      physics: NeverScrollableScrollPhysics(),
-      itemCount: 9,
-      itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () => _pickImage(index),
-          child: Container(
-            // padding: EdgeInsets.all(30),
-            decoration: ShapeDecoration(
-              color: AppColors.textColorWhite,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.r),
-              ),
-            ),
-            child: Center(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(15.r),
-                child: pickedImages[index] != null
-                    ? Image.file(
-                        File(pickedImages[index]!.path),
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                        height: double.infinity,
-                      )
-                    : Image.asset(
-                        AppImages.ypurauthenticationgalleypicturelogo,
-                        color: AppColors.bgColor,
-                        width: 25,
-                        height: 25,
-                      ),
-              ),
-            ),
-          ),
-        );
-      },
     );
   }
 }

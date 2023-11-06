@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:swooshed_app/utils/app_colors/app_colors.dart';
 import 'package:swooshed_app/utils/app_images/app_images.dart';
 import 'package:swooshed_app/utils/app_styles/app_text_styles.dart';
+import 'package:swooshed_app/view/bottom_nav_bar/nav_bar.dart';
 import 'package:swooshed_app/view/categories/categories.dart';
 
 import 'package:swooshed_app/widgets/custom_button/custom_buttons.dart';
@@ -74,7 +75,7 @@ class _PaymentSuccess1State extends State<PaymentSuccess1> {
                         padding: EdgeInsets.symmetric(horizontal: 48.r),
                         child: CustomButton(text: AppLocalizations.of
                           (context)!.payment,onPressed: (){
-                          Get.to(Categories());
+                          Get.to(BottomNav());
                         },),
                       ),
                     ]))));

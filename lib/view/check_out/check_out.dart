@@ -41,13 +41,17 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 CustomSizedBox(
                   height: 24.h,
                 ),
+
+                ///App Bar
                 Padding(
                   padding: EdgeInsets.only(left: 6.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      ///Back Icon
                       GestureDetector(
+
                         onTap: () {
                           Navigator.pop(context);
                         },
@@ -59,20 +63,30 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                               color: AppColors.textColor,
                             )),
                       ),
+                      ///App Bar Text
                       Padding(
                         padding: EdgeInsets.only(left: 6.w, top: 5.h),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            CustomText(
-                              text: AppLocalizations.of(context)!.summeryOder,
-                              style: AppTextStyles.heading1,
+                            ///App Bar Summary Order Text 1
+                            CustomSizedBox(
+                              width: 250.w,
+                              child: CustomText(
+                                text: AppLocalizations.of(context)!.summeryOder,
+                                style: AppTextStyles.heading1,
+                                textAlign: TextAlign.start,
+                              ),
                             ),
-                            CustomText(
-                              text: AppLocalizations.of(context)!.checkItem,
-                              style: AppTextStyles.fontSize14to400
-                                  .copyWith(fontSize: 14.sp),
+                            ///App Bar checkItem Text 2
+                            CustomSizedBox(
+                              width: 250.w,
+                              child: CustomText(
+                                text: AppLocalizations.of(context)!.checkItem,
+                                style: AppTextStyles.fontSize14to400
+                                    .copyWith(fontSize: 14.sp),
+                              ),
                             ),
                           ],
                         ),
@@ -80,9 +94,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     ],
                   ),
                 ),
+
                 CustomSizedBox(
                   height: 24.h,
                 ),
+                ///Token Container
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 32.w),
                   child: Container(
@@ -92,7 +108,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         color: AppColors.textColor),
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                          horizontal: 32.w, vertical: 16.h),
+                          horizontal: 20.w, vertical: 16.h),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,

@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:swooshed_app/utils/app_colors/app_colors.dart';
-import 'package:swooshed_app/utils/app_constants/app_constant.dart';
 import 'package:swooshed_app/widgets/custom_sized_box/custom_sized_box.dart';
-
 import '../../utils/app_styles/app_text_styles.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../widgets/botton_widget.dart';
@@ -117,7 +115,7 @@ class _BarcodeGenerateScreenState extends State<BarcodeGenerateScreen> {
                 BottonWidget(
                   height: 50.h,
                   width: double.infinity,
-                  ontap: () {
+                  onTap: () {
                     // Update qrData with the content from the text field
                     setState(() {
                       qrData = _textController.text;

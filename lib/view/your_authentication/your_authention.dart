@@ -127,17 +127,16 @@ class _YourAuthenticationScreenState extends State<YourAuthenticationScreen> {
                 height: 5.h,
               ),
               const GallerySection(),
-              CustomSizedBox(
-                height: 15.h,
-              ),
+
               Container(
+                // margin: EdgeInsets.only(bottom: 10),
                 child: clickCount == 2
                     ? null
                     : BottonWidget(
-                        ontap: () {
+                        onTap: () {
                           changeImage();
                         },
-                        height: 40.h,
+                        height: 50.h,
                         width: double.infinity,
                         text: AppLocalizations.of(context)!.sc,
                       ),

@@ -29,7 +29,6 @@ class BuyTokenComponent extends StatelessWidget {
           mainAxisExtent: 250.h,
           mainAxisSpacing: 10.0,
           crossAxisSpacing: 10.0,
-
         ),
         itemCount: myTokenData.length,
         itemBuilder: (context, index) {
@@ -38,12 +37,12 @@ class BuyTokenComponent extends StatelessWidget {
             // height: 255.h,
             // width: 155.w,
 
-            padding:  EdgeInsets.symmetric(vertical: 10.h),
+            padding: EdgeInsets.symmetric(vertical: 10.h),
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.2), // Shadow color
-                  spreadRadius: 2, // Spread radius
+                  // spreadRadius: 2, // Spread radius
                   blurRadius: 5, // Blur radius
                   offset: Offset(
                       0, 3), // Offset to control the position of the shadow
@@ -68,9 +67,9 @@ class BuyTokenComponent extends StatelessWidget {
                         boxShadow: [
                           BoxShadow(
                             color: AppColors.bgColor.withOpacity(0.2),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: Offset(0, 3),
+                            // spreadRadius: 2,
+                            blurRadius: 3,
+                            // offset: Offset(0, 3),
                           ),
                         ],
                       ),
@@ -90,7 +89,9 @@ class BuyTokenComponent extends StatelessWidget {
                             ),
                           ),
                           // const Spacer(),
-                          CustomSizedBox(height: 7.h,),
+                          CustomSizedBox(
+                            height: 7.h,
+                          ),
                           Padding(
                             padding: EdgeInsets.only(bottom: 5.h),
                             child: CustomText(
@@ -111,38 +112,36 @@ class BuyTokenComponent extends StatelessWidget {
                 ),
                 CustomText(
                   text: myTokenData[index].price.toString(),
-                  style: AppTextStyles.fontSize14to700
-                      .copyWith(color: AppColors.bgColor,overflow: TextOverflow.ellipsis),
+                  style: AppTextStyles.fontSize14to700.copyWith(
+                      color: AppColors.bgColor,
+                      overflow: TextOverflow.ellipsis),
                 ),
                 CustomSizedBox(
                   height: 14.h,
                 ),
-
-                Container(
-                  // padding: EdgeInsets.only(bottom: 5.h),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColors.bgColor.withOpacity(0.2),
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                        offset: Offset(0, 3),
-
-                      ),
-                    ],
-          ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15.w),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Container(
+                    // padding: EdgeInsets.only(bottom: 5.h),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.bgColor.withOpacity(0.2),
+                            // spreadRadius: 2,
+                            blurRadius: 4,
+                            // offset: Offset(0, 3),
+                          ),
+                        ]),
                     child: CustomButton(
                       height: 36.h,
                       onPressed: () {
                         Get.to(const CheckoutScreen());
                       },
                       text: AppLocalizations.of(context)!.buy,
-                      style: AppTextStyles.fontSize17to600.copyWith(fontSize: 16),
+                      style:
+                          AppTextStyles.fontSize17to600.copyWith(fontSize: 16),
                     ),
-
                   ),
                 )
               ],

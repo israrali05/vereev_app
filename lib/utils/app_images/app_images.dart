@@ -1,9 +1,18 @@
 class AppImages {
   // static const languageImg1 = "assets/images/svg_images";
+
+  // items details Screen
+  static const itemsDetailsQuestionMark =
+      "assets/images/png_images/item_details_question_mark.png";
+
+  //  App Logo Images
+  static const appSplashlogo = "assets/images/app_logo/splash_logo.png";
+  static const appIcon = "assets/images/app_logo/icon_app.jpg";
+  static const appIconPng = "assets/images/app_logo/app_icon_png.png";
+  static const logoapp_pngfull = "assets/images/app_logo/logo_app.png";
+
   //Not Login Screen Images
   static const person = "assets/images/svg_images/person.svg";
-
-  // static const personPngImage = "assets/images/png_images/person.png";
 
   ///Login Screen Images
   // static const logo = "assets/images/svg_images/logo.svg";

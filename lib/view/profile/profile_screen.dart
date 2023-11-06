@@ -3,10 +3,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:swooshed_app/utils/app_colors/app_colors.dart';
 import 'package:swooshed_app/utils/app_images/app_images.dart';
-import 'package:swooshed_app/view/choose_language/choose_language.dart';
+import 'package:swooshed_app/view/profile/about_us/about_us.dart';
+import 'package:swooshed_app/view/profile/components/language_screen_select.dart';
 import 'package:swooshed_app/view/profile/components/row_widget.dart';
+import 'package:swooshed_app/view/profile/contact_us/contact_us.dart';
+import 'package:swooshed_app/view/profile/faq_screen/faq_screen.dart';
+import 'package:swooshed_app/view/profile/setting/setting_screen.dart';
+import 'package:swooshed_app/view/profile/share_app/share_app.dart';
 import 'components/profile_header_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'invite_friends/invite_friends.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({
@@ -30,7 +37,9 @@ class ProfileScreen extends StatelessWidget {
             Column(
               children: [
                 RowWidget(
-                  ontap: () {},
+                  ontap: () {
+                    Get.to(() => InviteFriendScreen());
+                  },
                   preffix: AppImages.profileInviteFriend,
                   text: AppLocalizations.of(context)!.invite_friends,
                 ),
@@ -38,9 +47,11 @@ class ProfileScreen extends StatelessWidget {
                   height: 8.h,
                 ),
                 RowWidget(
-                  ontap: () {},
+                  ontap: () {
+                    Get.to(() => ShareAppScreen());
+                  },
                   preffix: AppImages.profileShareApp,
-                  text: AppLocalizations.of(context)!.share_swooshed_app,
+                  text: AppLocalizations.of(context)!.share_vereev_app,
                 ),
                 SizedBox(
                   height: 24.h,
@@ -48,7 +59,9 @@ class ProfileScreen extends StatelessWidget {
                 Column(
                   children: [
                     RowWidget(
-                      ontap: () {},
+                      ontap: () {
+                        Get.to(() => AboutUsScreen());
+                      },
                       preffix: AppImages.profileAboutUs,
                       text: AppLocalizations.of(context)!.about_us,
                     ),
@@ -56,7 +69,9 @@ class ProfileScreen extends StatelessWidget {
                       height: 8.h,
                     ),
                     RowWidget(
-                      ontap: () {},
+                      ontap: () {
+                        Get.to(() => ContactUsScreen());
+                      },
                       preffix: AppImages.profileContactUs,
                       text: AppLocalizations.of(context)!.contact_us,
                     ),
@@ -64,7 +79,9 @@ class ProfileScreen extends StatelessWidget {
                       height: 8.h,
                     ),
                     RowWidget(
-                      ontap: () {},
+                      ontap: () {
+                        Get.to(() => FAQScreen());
+                      },
                       preffix: AppImages.profileFAQ,
                       text: AppLocalizations.of(context)!.faq,
                     ),
@@ -77,7 +94,7 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     RowWidget(
                       ontap: () {
-                        Get.to(() => const ChooseLanguageScreen());
+                        Get.to(() => const ChooseLanguagePofile());
                       },
                       preffix: AppImages.profileLanguages,
                       text: AppLocalizations.of(context)!.language,
@@ -86,7 +103,9 @@ class ProfileScreen extends StatelessWidget {
                       height: 8.h,
                     ),
                     RowWidget(
-                      ontap: () {},
+                      ontap: () {
+                        Get.to(() => SettingScreen());
+                      },
                       preffix: AppImages.profileSetting,
                       text: AppLocalizations.of(context)!.setting,
                     ),
